@@ -1,0 +1,71 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{helvet}
+\usepackage[12pt]{moresize}
+\usepackage[utf8]{inputenc}
+\usepackage{ragged2e}
+\renewcommand{\familydefault}{\sfdefault}
+\pagenumbering{gobble}
+\usepackage[none]{hyphenat}
+\usepackage[top=92mm, left=16mm, right=60mm, bottom=5mm]{geometry}
+
+ 
+\renewcommand{\baselinestretch}{1}
+\setlength{\parindent}{0em}
+\makeatletter
+\def\parsecomma#1,#2\endparsecomma{\def\page@x{#1}\def\page@y{#2}}
+\tikzdeclarecoordinatesystem{page}{
+    \parsecomma#1\endparsecomma
+    \pgfpointanchor{current page}{north east}
+    % Save the upper right corner
+    \pgf@xc=\pgf@x%
+    \pgf@yc=\pgf@y%
+    % save the lower left corner
+    \pgfpointanchor{current page}{south west}
+    \pgf@xb=\pgf@x%
+    \pgf@yb=\pgf@y%
+    % Transform to the correct placement
+    \pgfmathparse{(\pgf@xc-\pgf@xb)/2.*\page@x+(\pgf@xc+\pgf@xb)/2.}
+    \expandafter\pgf@x\expandafter=\pgfmathresult pt
+    \pgfmathparse{(\pgf@yc-\pgf@yb)/2.*\page@y+(\pgf@yc+\pgf@yb)/2.}
+    \expandafter\pgf@y\expandafter=\pgfmathresult pt
+}
+\makeatother
+%\tikzdeclarecoordinatesystem
+
+\begin{document}
+
+\begin{tikzpicture}[remember picture,overlay,every node/.style={anchor=center}]
+  \node at (page cs:0.72,-0.45) {\includegraphics[angle=-90]{msc_1.pdf}};
+\end{tikzpicture}
+
+\begin{flushleft}
+\HUGE \textbf{Revolutionary new algorithm that does exactly nothing}
+
+\vspace{5mm}
+
+\LARGE Nome do autor
+
+\large Nome do curso
+
+\normalsize Nome do departamento
+
+\normalsize Ano
+
+\vspace{5mm}
+
+
+\textbf{Orientador}
+
+Nome do orientador, Categoria, Faculdade
+
+\vspace{5mm}
+
+\textbf{Coorientador}
+
+Nome do orientador, Categoria, Faculdade
+
+\end{flushleft}
+\vfill
+\end{document}
+
