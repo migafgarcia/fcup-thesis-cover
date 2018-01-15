@@ -1,15 +1,17 @@
-\documentclass{article}
+\documentclass{report}
 \usepackage{tikz}
-\usepackage{helvet}
+\usepackage{fontspec}
+
+%\usepackage{helvet}
 \usepackage[12pt]{moresize}
 \usepackage[utf8]{inputenc}
-\usepackage{ragged2e}
 \renewcommand{\familydefault}{\sfdefault}
 \pagenumbering{gobble}
 \usepackage[none]{hyphenat}
-\usepackage[top=92mm, left=16mm, right=60mm, bottom=5mm]{geometry}
+\usepackage[top=92mm, left=16mm, textwidth=140mm, bottom=5mm]{geometry}
 
- 
+\setsansfont[BoldFont=arialbd.ttf,ItalicFont=ariali.ttf,BoldItalicFont=arialbi.ttf]{arial.ttf}
+\renewcommand{\familydefault}{\sfdefault}
 \renewcommand{\baselinestretch}{1}
 \setlength{\parindent}{0em}
 \makeatletter
@@ -40,30 +42,30 @@
 \end{tikzpicture}
 
 \begin{flushleft}
-\HUGE \textbf{Revolutionary new algorithm that does exactly nothing}
+\HUGE \textbf{New mind controlled banana that jumps and swims using Dijkstra Algorithm}
 
 \vspace{5mm}
+\vfill
+\LARGE Autor
 
-\LARGE Nome do autor
+\large Curso
 
-\large Nome do curso
-
-\normalsize Nome do departamento
+\normalsize Departamento
 
 \normalsize Ano
 
 \vspace{5mm}
 
 
-\textbf{Orientador}
+\large \textbf{Orientador}
 
-Nome do orientador, Categoria, Faculdade
+\normalsize Nome, Categoria, Departamento
 
 \vspace{5mm}
 
-\textbf{Coorientador}
+\large \textbf{Coorientador}
 
-Nome do orientador, Categoria, Faculdade
+\normalsize Nome ,Categoria, Departamento
 
 \end{flushleft}
 \vfill
